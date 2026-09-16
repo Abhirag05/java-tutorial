@@ -13,5 +13,11 @@ public class TypeCast {
         int e = 257;
         byte b1 = (byte) e;// takes modulo 256 of the number and stores it in byte
         System.out.println(b1);
+
+        // type promotion
+        byte x = 10;
+        byte y = 30;
+        int result = x * y;
+        System.out.println(result);
     }
 }
