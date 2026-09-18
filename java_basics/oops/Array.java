@@ -1,3 +1,4 @@
+package oops;
 class Student{
     String name;
     int age;
