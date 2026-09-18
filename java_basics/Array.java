@@ -1,3 +1,10 @@
+class Student{
+    String name;
+    int age;
+    public void display(){
+        System.out.println("Name:"+name + "Age:"+age);
+    }
+}
 public class Array {
     public static void main(String[] args) {
         //array of elements
@@ -19,6 +26,21 @@ public class Array {
             }
            
        }
+       Student s1=new Student();
+       s1.name="ABhi";
+       s1.age=20;
 
+       Student s2=new Student();
+       s2.name="ZOro";
+       s2.age=30;
+       
+       Student arr[]=new Student[2];//array containing the  reference to the objects.
+       arr[0]=s1;
+       arr[1]=s2;
+       
+       for(int i=0;i<arr.length;i++){
+            arr[i].display();
+       }
+       
     }
 }
