@@ -21,6 +21,9 @@ class C extends B{
     public void display(){
         System.out.println("This is class C");
     }
+    public void show(){
+        System.out.println("This is class C");
+    }
 
 }
 
@@ -41,6 +44,8 @@ public class DemoPolymorphism {
         obj.display();
         
         obj=new C();
+        C cobj=(C)obj; //downcasting: downcasting is the process of converting a reference variable of a superclass type to a reference variable of a subclass type. It is done by using the cast operator (). Downcasting is required when we want to access the methods of the subclass that are not present in the superclass. In this case, we need to downcast the reference variable of the superclass to the reference variable of the subclass in order to access the methods of the subclass.
+        cobj.show();
         obj.display();
     }
     
