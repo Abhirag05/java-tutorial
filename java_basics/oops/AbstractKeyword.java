@@ -7,7 +7,7 @@ abstract class Car{//abstract class can have abstract methods and non-abstract m
         System.out.println("Music is playing");   
     }
 }
-class BMW extends Car{
+class BMW extends Car{//concrete class which is child class of abstract class Car and it is implementing the abstract method of parent class.
     public void drive(){//this is the implementation of abstract method of parent class.if we dont implement it we will get compile time error.
         System.out.println("BMW is driving");
     }
