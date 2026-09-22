@@ -48,7 +48,7 @@ public class DemoException {
         catch (Exception e) {
             System.out.println("Exception caught: "+e.getMessage());
         }
-        finally{
+        finally{//finaly can be used in scenario where we want to close the resources like file, database connection etc. It is used to execute important code such as closing connection, stream etc. It is executed whether an exception is handled or not. The finally block always executes when the try block exits. The finally block is optional and can be used with try-catch blocks.
             System.out.println("This block will always execute");
         }
     }
