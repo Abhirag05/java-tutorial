@@ -19,9 +19,9 @@ public class RaceCondition {
                 c.increment();
             }
         };
-        Thread t1=new Thread(ob1);
+        Thread t1=new Thread(ob1);//it goes to the new state
         Thread t2=new Thread(ob2);
-        t1.start();
+        t1.start();//it goes to the runnable state and then it will go to the running state when the thread scheduler picks it up for execution.or when run() method it is in the running state it will go to the terminated state when the run() method completes its execution.
         t2.start();
         t1.join();//join() method is used to wait for the thread to complete its execution. The join() method is called by the main thread and it waits for the thread t1 to complete its execution. The join() method throws InterruptedException if the thread is interrupted while it is waiting.
         t2.join();
