@@ -18,3 +18,5 @@ what maven can do?
 -download and manage dependencies automatically from a central repository.
 -execute unit test cases using testing frameworks like JUnit or TestNG.
 -compile source code and package it into JAR or WAR files.
+-generate project documentation and reports.
+-automate the build process through a series of predefined lifecycle phases.
