@@ -14,9 +14,48 @@ jar is basically a Java ARchive file format that is used to aggregate many Java 
 maven is an open source tool and developed by the Apache Software Foundation. It is widely used in the Java community for managing project builds, dependencies, and documentation. Maven provides a consistent and standardized way to build projects, making it easier for developers to collaborate and maintain codebases. It also integrates with various IDEs (Integrated Development Environments) like Eclipse, IntelliJ IDEA, and NetBeans, enhancing the development experience.
 
 what maven can do?
+
 -create the standard project folder structure for a new project.
 -download and manage dependencies automatically from a central repository.
 -execute unit test cases using testing frameworks like JUnit or TestNG.
 -compile source code and package it into JAR or WAR files.
 -generate project documentation and reports.
 -automate the build process through a series of predefined lifecycle phases.
+
+Command for creating a new maven project:
+
+mvn archetype:generate "-DgroupId=com.example" "-DartifactId=myapp" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DinteractiveMode=false"
+
+
+Maven Goals
+
+maven goals are used to perform various stages of the project lifecycle. Some common goals include:
+- **clean**: Cleans the project by deleting the target directory, which contains compiled classes and other build artifacts.
+- **compile**: Compiles the source code of the project.
+- **test**: Executes unit tests using testing frameworks like JUnit or TestNG.
+- **package**: Packages the compiled code into a distributable format, such as a JAR or WAR file.
+- **install**: Installs the package into the local repository for use as a dependency in other projects.
+
+$mvn <goal> :This command is used to execute a specific goal in Maven. For example, to compile the project, you would run:
+
+```bash
+mvn compile
+```
+```bash
+mvn clean:This command is used to clean the project by deleting the target directory, which contains compiled classes and other build artifacts. It is often used before building the project to ensure a clean build environment.
+
+```
+
+```bash
+mvn test: This command is used to execute unit tests in the project. It runs the tests defined in the test source directory and generates test reports.It runs compile + test phases of the build lifecycle.
+```
+
+```bash
+mvn package: This command is used to package the compiled code into a distributable format, such as a JAR or WAR file. It runs compile + test + package phases of the build lifecycle.
+```
+
+
+Maven Web APP
+```bash
+mvn archetype:generate "-DgroupId=com.example" "-DartifactId=myapp" "-DarchetypeArtifactId=maven-archetype-webapp" "-DinteractiveMode=false"
+```
