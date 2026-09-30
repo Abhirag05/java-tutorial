@@ -13,7 +13,7 @@ public class Main {
         try (
         Connection connection = DriverManager.getConnection(url, username, password);
         //creating a Statement object using the connection to execute SQL queries against the database.
-         Statement statement = connection.createStatement()
+         Statement statement = connection.createStatement();
         ) {
 
         System.out.println("Database connected successfully!");
@@ -36,6 +36,7 @@ public class Main {
 
         int resultSet4 = statement.executeUpdate(query4);
         
+        //Result set is used to store the result of a SELECT query, while executeUpdate is used for INSERT, UPDATE, and DELETE queries that modify the database but do not return a result set.
         ResultSet resultSet1 = statement.executeQuery(query1);
 
 
@@ -70,6 +71,9 @@ public class Main {
 
         System.out.println(id + " " + name + " " + age);
         }
+
+        //execute():this method is used to execute a SQL statement that may return multiple results, such as a SELECT query that returns a result set and an update count. It returns a boolean value indicating whether the first result is a ResultSet object or an update count.with this we can perform multiple operations in a single statement execution.
+        
 
     } catch (Exception e) {
     System.out.println("Connection failed!");
