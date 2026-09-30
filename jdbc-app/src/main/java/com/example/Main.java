@@ -18,16 +18,55 @@ public class Main {
 
         System.out.println("Database connected successfully!");
         
-        String sql = "SELECT * FROM jdbc_practice";
+        String query1 = "SELECT * FROM jdbc_practice";
+
+        String query2 = "INSERT INTO jdbc_practice (id,name, age) VALUES (5, 'John Doe', 30)";
+
+        String query3 = "UPDATE jdbc_practice SET age = 35 WHERE id = 5";
+
+        String query4 = "DELETE FROM jdbc_practice WHERE id = 4";
+
         
         // Execute the SQL query and obtain the result set
-        ResultSet resultSet = statement.executeQuery(sql);
+        //the multiple execution of same statement object closes the previous result set, so we need to execute the queries in order and store the results in separate variables.
+
+        int resultSet2 = statement.executeUpdate(query2);
+
+        int resultSet3 = statement.executeUpdate(query3);
+
+        int resultSet4 = statement.executeUpdate(query4);
         
+        ResultSet resultSet1 = statement.executeQuery(query1);
+
+
         //process the result set and print the retrieved data
-        while (resultSet.next()) {
-        int id = resultSet.getInt("id");
-        String name = resultSet.getString("name");
-        int age = resultSet.getInt("age");
+
+        //insert
+        if (resultSet2 > 0) {
+            System.out.println("Data inserted successfully!");
+        } else {
+            System.out.println("Data insertion failed!");
+        }
+
+        //update
+        if (resultSet3 > 0) {
+            System.out.println("Data updated successfully!");
+        } else {
+            System.out.println("Data update failed!");
+        }
+
+        //delete
+        if (resultSet4 > 0) {
+            System.out.println("Data deleted successfully!");
+        } else {
+            System.out.println("Data deletion failed!");
+        }
+
+        //select
+        while (resultSet1.next()) {
+        int id = resultSet1.getInt("id");
+        String name = resultSet1.getString("name");
+        int age = resultSet1.getInt("age");
 
         System.out.println(id + " " + name + " " + age);
         }
