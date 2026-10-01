@@ -63,7 +63,7 @@ public class Main {
             System.out.println("Data deletion failed!");
         }
 
-        //select
+        //select:we get the resultset and from that we can fetch the data
         while (resultSet1.next()) {
         int id = resultSet1.getInt("id");
         String name = resultSet1.getString("name");
